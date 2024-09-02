@@ -1,7 +1,21 @@
-import React from 'react'
+import {BrowserRouter, Routes, Route}  from "react-router-dom";
+import Home from './pages/Home';
+import Signin from './pages/Signin';
+import Signout from './pages/Signout';
+import About from './pages/About';
+import Profile from './pages/Profile';
+
 
 export default function App() {
-  return (
-    <h1 className='text-red-500'> Hello welcome to MERN Stack</h1>
-  )
-}
+  return <BrowserRouter>
+  <Routes>
+<Route path="/Home" element={<Home/>}/>
+<Route path="/About" element={<About/>}/>
+<Route path="/Signin" element={<Signin/>}/>
+<Route path="/Signout" element={<Signout/>}/>
+<Route path="/Profile" element={<Profile/>}/>
+</Routes>
+  </BrowserRouter>;
+   
+  }
+
